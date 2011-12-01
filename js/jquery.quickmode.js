@@ -37,7 +37,7 @@ THE SOFTWARE.
     
     return this.each(function(){
       
-      $(this).find("textarea").unbind("keydown").keydown(function(data){
+      $(this).find("textarea").live("keydown" , function(data){
         if(opts.is_quick && !data.altKey && data.keyCode == 13){
           $(this).closest("form").submit();
         }else if(data.altKey && data.keyCode == 13){
